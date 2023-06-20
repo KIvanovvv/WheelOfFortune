@@ -22,6 +22,8 @@
   border-radius: 50%;
   border: 5px solid lightgray;
   overflow: hidden;
+  transition: all 5s ease;
+  /* transform: rotate(348deg); */
 }
 
 .wheel span {
@@ -31,41 +33,40 @@
   display: inline-block;
 }
 .cell1,
-.cell1-2,
-.cell1-3,
-.cell1-4 {
+.cell5,
+.cell9,
+.cell13 {
   top: 50%;
   left: 0;
   transform: translate(0, -50%);
   clip-path: polygon(0 30%, 0 70%, 100% 50%);
 }
 .cell2,
-.cell2-2,
-.cell2-3,
-.cell2-4 {
+.cell6,
+.cell10,
+.cell14 {
   top: 50%;
   left: 50%;
   transform: translate(0, -50%);
   clip-path: polygon(0 50%, 100% 30%, 100% 70%);
 }
 .cell3,
-.cell3-2,
-.cell3-3,
-.cell3-4 {
+.cell7,
+.cell11,
+.cell15 {
   top: 0;
   left: 50%;
   transform: translate(-50%, 0);
   clip-path: polygon(30% 0, 70% 0, 50% 100%);
 }
 .cell4,
-.cell4-2,
-.cell4-3,
-.cell4-4 {
+.cell8,
+.cell12,
+.cell16 {
   top: 50%;
   left: 50%;
   transform: translate(-50%);
   clip-path: polygon(50% 0, 70% 100%, 30% 100%);
-
 }
 .sector1 {
   width: 100%;
@@ -104,6 +105,92 @@
 }
 .sector4 span {
   background-color: #3498db;
+}
+.prize1 {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: green;
+  color: white;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+}
+.prize2 {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: green;
+  color: white;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+}
+.prize3 {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: green;
+  color: white;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.prize4 {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: green;
+  color: white;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn-start {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 22px;
+  font-weight: 900;
+  padding: 30px 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+.arrow {
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 40px;
+  background-color: red;
+  cursor: pointer;
+  clip-path: polygon(48% 80%, 100% 0, 0 0);
+
+  z-index: 100;
 }
 
 @media screen and (max-width: 650px) {

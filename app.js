@@ -34,55 +34,138 @@ const cell14Value = cell14.querySelector(`b`).textContent;
 const cell15Value = cell15.querySelector(`b`).textContent;
 const cell16Value = cell16.querySelector(`b`).textContent;
 
-console.log(cell2Value);
 let btnClicked = false;
 let initialDeg = 0;
+let spins = 0;
 btnStart.addEventListener(`click`, () => {
   if (!btnClicked) {
+    if (spins === 10) {
+      spins = 0;
+    }
+    spins++;
     btnClicked = true;
+    let spinDeg = 0;
     let randomDeg = Math.random() * 360;
-    if (randomDeg <= 11.2 || randomDeg >= 348.8) {
+    if (spins === 1) {
+      //Spin 1 is random
+      let rngVar = randomDeg;
+      //Prevents landing on cell 1
+      while (rngVar > 79 && rngVar < 101.5) {
+        rngVar = Math.random() * 360;
+      }
+      spinDeg = rngVar;
+    }
+    if (spins === 2) {
+      spinDeg = Math.random() * 22.5 + 79; //On Spin 2 always land on cell 1
+    }
+    if (spins === 3) {
+      //Spin 3 is random
+      let rngVar = randomDeg;
+      //Prevents landing on cell 1
+      while (rngVar > 79 && rngVar < 101.5) {
+        rngVar = Math.random() * 360;
+      }
+      //Prevents landing on cell 2
+      while (rngVar > 259.8 && rngVar < 282.3) {
+        rngVar = Math.random() * 360;
+      }
+      spinDeg = rngVar;
+    }
+    if (spins === 4) {
+      spinDeg = Math.random() * 22.5 + 259.8; //On Spin 4 always land on cell 2
+    }
+    if (spins === 5) {
+      //Spin 5 is random
+      let rngVar = randomDeg;
+      //Prevents landing on cell 1
+      while (rngVar > 79 && rngVar < 101.5) {
+        rngVar = Math.random() * 360;
+      }
+      //Prevents landing on cell 2
+      while (rngVar > 259.8 && rngVar < 282.3) {
+        rngVar = Math.random() * 360;
+      }
+      spinDeg = rngVar;
+    }
+    if (spins === 6) {
+      spinDeg = Math.random() * 22.5 + 79; //On Spin 6 always land on cell 1
+    }
+    if (spins === 7) {
+      //Spin 7 is random
+      let rngVar = randomDeg;
+      //Prevents landing on cell 1
+      while (rngVar > 79 && rngVar < 101.5) {
+        rngVar = Math.random() * 360;
+      }
+      //Prevents landing on cell 2
+      while (rngVar > 259.8 && rngVar < 282.3) {
+        rngVar = Math.random() * 360;
+      }
+      spinDeg = rngVar;
+    }
+    if (spins === 8) {
+      spinDeg = Math.random() * 22.5 + 259.8; //On Spin 8 always land on cell 2
+    }
+    if (spins === 9) {
+      //Spin 9 is random
+      let rngVar = randomDeg;
+      //Prevents landing on cell 1
+      while (rngVar > 79 && rngVar < 101.5) {
+        rngVar = Math.random() * 360;
+      }
+      //Prevents landing on cell 2
+      while (rngVar > 259.8 && rngVar < 282.3) {
+        rngVar = Math.random() * 360;
+      }
+      spinDeg = rngVar;
+    }
+    if (spins === 10) {
+      spinDeg = Math.random() * 22.5 + 79; //On Spin 10 always land on cell 1 and reset spins counter
+      spins = 0;
+    }
+
+    if (spinDeg <= 11.2 || spinDeg >= 348.8) {
       console.log(cell3Value);
-    } else if (randomDeg <= 33.7 && randomDeg >= 11.3) {
+    } else if (spinDeg <= 33.7 && spinDeg >= 11.3) {
       console.log(cell10Value);
-    } else if (randomDeg <= 56.3 && randomDeg >= 33.8) {
+    } else if (spinDeg <= 56.3 && spinDeg >= 33.8) {
       console.log(cell9Value);
-    } else if (randomDeg <= 78.9 && randomDeg >= 56.4) {
+    } else if (spinDeg <= 78.9 && spinDeg >= 56.4) {
       console.log(cell14Value);
-    } else if (randomDeg <= 101.5 && randomDeg >= 79) {
+    } else if (spinDeg <= 101.5 && spinDeg >= 79) {
       console.log(cell1Value);
-    } else if (randomDeg <= 124.1 && randomDeg >= 101.6) {
+    } else if (spinDeg <= 124.1 && spinDeg >= 101.6) {
       console.log(cell11Value);
-    } else if (randomDeg <= 146.7 && randomDeg >= 124.2) {
+    } else if (spinDeg <= 146.7 && spinDeg >= 124.2) {
       console.log(cell7Value);
-    } else if (randomDeg <= 169.3 && randomDeg >= 146.8) {
+    } else if (spinDeg <= 169.3 && spinDeg >= 146.8) {
       console.log(cell15Value);
-    } else if (randomDeg <= 191.9 && randomDeg >= 169.4) {
+    } else if (spinDeg <= 191.9 && spinDeg >= 169.4) {
       console.log(cell4Value);
-    } else if (randomDeg <= 214.5 && randomDeg >= 192) {
+    } else if (spinDeg <= 214.5 && spinDeg >= 192) {
       console.log(cell6Value);
-    } else if (randomDeg <= 237.1 && randomDeg >= 214.6) {
+    } else if (spinDeg <= 237.1 && spinDeg >= 214.6) {
       console.log(cell5Value);
-    } else if (randomDeg <= 259.7 && randomDeg >= 237.2) {
+    } else if (spinDeg <= 259.7 && spinDeg >= 237.2) {
       console.log(cell13Value);
-    } else if (randomDeg <= 282.3 && randomDeg >= 259.8) {
+    } else if (spinDeg <= 282.3 && spinDeg >= 259.8) {
       console.log(cell2Value);
-    } else if (randomDeg <= 304.9 && randomDeg >= 282.4) {
+    } else if (spinDeg <= 304.9 && spinDeg >= 282.4) {
       console.log(cell12Value);
-    } else if (randomDeg <= 327.5 && randomDeg >= 305) {
+    } else if (spinDeg <= 327.5 && spinDeg >= 305) {
       console.log(cell8Value);
-    } else if (randomDeg <= 348.7 && randomDeg >= 327.6) {
+    } else if (spinDeg <= 348.7 && spinDeg >= 327.6) {
       console.log(cell16Value);
     }
 
-    console.log(randomDeg);
-    randomDeg = randomDeg + 720;
+    console.log(spinDeg);
+    spinDeg = spinDeg + 720;
     wheelElement.style.transition = `all 5s ease `;
-    wheelElement.style.transform = `rotate(${randomDeg}deg)`;
+    wheelElement.style.transform = `rotate(${spinDeg}deg)`;
 
     setTimeout(() => {
       wheelElement.style.transition = `all 0s `;
-      wheelElement.style.transform = `rotate(${randomDeg - 720}deg)`;
+      wheelElement.style.transform = `rotate(${spinDeg - 720}deg)`;
       btnClicked = false;
     }, 5000);
   }

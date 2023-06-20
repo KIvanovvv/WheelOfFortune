@@ -41,6 +41,7 @@ const bonusGame = document.querySelector(`.bonus-game`);
 
 const wheelSpinSound = new Audio(`./assets/sound/wheelSound.wav`);
 const freeSpinSound = new Audio(`./assets/sound/freeSpinsSound.wav`);
+
 let btnClicked = false;
 let initialDeg = 0;
 let spins = 0;
@@ -139,7 +140,7 @@ btnStart.addEventListener(`click`, () => {
       spinDeg = Math.random() * 21 + 79; //On Spin 10 always land on cell 1 and reset spins counter
       spins = 0;
     }
-    spinDeg = 256; // Uncomment to check Free Spins
+    // spinDeg = 256; // Uncomment to check Free Spins
     checkValue(spinDeg);
 
     spinDeg = spinDeg + 720;

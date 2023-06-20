@@ -8,11 +8,16 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-image: url("./assets/bgWheel.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .wheel-container {
   width: 600px;
   height: 600px;
   position: relative;
+  margin-top: 5%;
 }
 
 .wheel {
@@ -179,6 +184,9 @@
   border: none;
   cursor: pointer;
 }
+.btn-start:hover {
+  color: green;
+}
 .arrow {
   position: absolute;
   top: 2%;
@@ -186,16 +194,82 @@
   transform: translate(-50%, -50%);
   width: 80px;
   height: 40px;
-  background-color: red;
+  background-color: orangered;
   cursor: pointer;
   clip-path: polygon(48% 80%, 100% 0, 0 0);
-
   z-index: 100;
+}
+
+.balance-container {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: gold;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  gap: 10px;
+}
+.balance {
+  color: green;
+}
+.heading {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  background-color: gold;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+@media screen and (max-width: 1580px) {
+  .heading {
+    font-size: 24px;
+    top: 16%;
+  }
+}
+@media screen and (max-width: 950px) {
+  .balance-container {
+    font-size: 24px;
+    top: 6%;
+  }
+  .heading {
+    font-size: 24px;
+    top: 14%;
+  }
 }
 
 @media screen and (max-width: 650px) {
   .wheel-container {
     width: 400px;
     height: 400px;
+  }
+  .heading {
+    font-size: 24px;
+    top: 17%;
+  }
+  .btn-start {
+    font-size: 18px;
+    padding: 20px 10px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .wheel-container {
+    width: 360px;
+    height: 360px;
+  }
+  .heading {
+    font-size: 20px;
+    top: 20%;
   }
 }

@@ -140,7 +140,7 @@ btnStart.addEventListener(`click`, () => {
       spinDeg = Math.random() * 21 + 79; //On Spin 10 always land on cell 1 and reset spins counter
       spins = 0;
     }
-    // spinDeg = 256; // Uncomment to check Free Spins
+    //spinDeg = 256; // Uncomment to check Free Spins
     checkValue(spinDeg);
 
     spinDeg = spinDeg + 720;
@@ -276,7 +276,6 @@ function bonusGameSpins() {
     spin3Deg = bonusSpin();
   }, 12000);
   setTimeout(() => {
-    console.log(spin1Deg, spin2Deg, spin3Deg);
     let win1 = checkValue(spin1Deg, true);
     let win2 = checkValue(spin2Deg, true);
     let win3 = checkValue(spin3Deg, true);
@@ -285,6 +284,7 @@ function bonusGameSpins() {
     balanceBoard.textContent = balance;
     heading.style.color = "green";
     heading.textContent = `Поздравления! Вие спечелихте ${bonusWin} кредита от бонус играта!`;
+    freeSpinsTriggered = false;
     btnClicked = false;
     freeSpins = 0;
   }, 18000);
